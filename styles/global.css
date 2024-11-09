@@ -5,9 +5,12 @@
 }
 
 body {
-  width: 1100px;
-  margin: 0 auto;
+  /* width: 1100px; */
+  /* margin: 0 auto; */
   font-family: Raleway, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  font-weight: 400;
 }
 
 h1,
@@ -32,3 +35,38 @@ a {
 img {
   width: 100%;
 }
+ul {
+  list-style: none;
+}
+address {
+  all: unset;
+}
+button {
+  all: unset;
+  display: block;
+}
+
+
+.link {
+  text-underline-offset: 4px;
+  transition: 0.3s;
+  
+}
+.link.link_active {
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ba4046;
+}
+.overlay::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: .6;
+  transition: .3s;
+} 
