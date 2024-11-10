@@ -2,12 +2,16 @@
 
 /* Сделал класс .link для всех ссылок,
 потому что такой стиль используется в некольких местах, 
-добавил ему поведение по :hover (сделал для всех кликабельных элементов)
-и активное состояние для меню навигации */
+добавил ему поведение c псевдоклассами :hover, :active 
+(это для всех кликабельных элементов)
+Несколько имен классов из рекомендуемых в задании изменены в угоду единообразию,
+так menu в футере и хедере однотипно,
+но предложен немного разный принцип именования дочерних элементов,
+я сделал в хедере по тому принципу, который предложен в футере*/
 
 .link {
   letter-spacing: 0.03em;
-  text-underline-offset: 4px;
+  text-underline-offset: 5px;
   transition: 0.3s;
 }
 
@@ -23,7 +27,11 @@
   color: #ba4046;
 }
 
-/* Оверлей сделал псевдоэлеменом, так грамотнее.
+.link:active {
+  text-decoration: none;
+}
+
+/* Оверлей сделал псевдоэлеменом.
  Надо просто добавить класс к блоку на котором нужна маска */
 
 .overlay {
@@ -44,7 +52,7 @@
 
 .address {
   width: 240px;
-  line-height: 24px;
+  line-height: 1.33;
 }
 .address-text {
   letter-spacing: 0.02em;
@@ -96,6 +104,7 @@
 
 .header__logo {
   width: 138px;
+  text-decoration: none;
 }
 
 .header__address.address {
@@ -105,7 +114,6 @@
 /* COVER */
 
 .cover {
-  position: relative;
   width: 100%;
   margin-bottom: 179px;
   padding: 165px 50px 51px;
@@ -127,18 +135,18 @@
 .aligned-text {
   display: block;
   margin-bottom: 20px;
-  line-height: 115px;
+  line-height: 1.15;
 }
 
 .aligned-text.aligned-text_center {
   padding-left: 10px;
-  line-height: 100px;
+  line-height: 1;
   text-align: center;
 }
 
 .aligned-text.aligned-text_right {
   margin-bottom: 0;
-  line-height: 100px;
+  line-height: 1;
   text-align: right;
 }
 
@@ -179,7 +187,9 @@
 .bet-button:hover {
   box-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
 }
-
+.bet-button:active {
+  box-shadow: none;
+}
 /* LOTS */
 
 .lots {
@@ -218,8 +228,15 @@
   text-decoration: none;
 }
 
+.card-link:hover.overlay::after {
+  opacity: 0.4;
+}
+
+.card-link:active.overlay::after {
+  opacity: 0.7;
+}
+
 .card {
-  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -242,27 +259,15 @@
   background-image: url(../images/card-lot-03.jpg);
 }
 
-.card:hover.overlay::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.4;
-  background-color: #000;
-}
-
 .card__title {
   position: relative;
   z-index: 1;
   margin-bottom: auto;
   font-weight: bold;
   font-size: 22px;
-  line-height: 26px;
   text-decoration: underline;
   text-decoration-color: #fff;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
   text-transform: uppercase;
 }
 
@@ -270,7 +275,7 @@
   position: relative;
   z-index: 1;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
 }
 
 .lots__look-more-link {
@@ -315,7 +320,7 @@
   grid-row: 2;
   place-self: start;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
 }
 
@@ -340,7 +345,7 @@
 }
 
 .footer__menu-item {
-  line-height: 22px;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -369,5 +374,9 @@
 }
 
 .footer__social-link:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.footer__social-link:active {
+  box-shadow: none;
 }
