@@ -10,9 +10,9 @@
 я сделал в хедере по тому принципу, который предложен в футере*/
 
 .link {
+  letter-spacing: 0.01em;
   text-underline-offset: 5px;
   transition: 0.3s;
-  letter-spacing: 0.01em;
 }
 
 .link.link_active {
@@ -271,14 +271,17 @@
 /* ABOUT */
 
 .about {
+  margin-bottom: 180px;
+  padding: 0 24px;
+}
+
+.about__block {
   display: grid;
   grid-template-columns: 334px 1fr;
   grid-template-rows: auto;
   place-items: center;
   gap: 8px 25px;
   width: 100%;
-  margin-bottom: 180px;
-  padding: 0 24px;
 }
 
 .about__logo {
